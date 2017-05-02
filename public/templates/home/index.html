@@ -257,6 +257,13 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+<script>
+    $(".alertas").notify(
+      "<%= @invoices.count%> Os HOJE", 
+      { position:"bottom-center" }
+    );
+</script>
+
 </body>
 
 </html>

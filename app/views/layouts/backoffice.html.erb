@@ -25,9 +25,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render partial: "layouts/backoffice_shared/navigation" %>
+  <%= render partial: "layouts/backoffice_shared/navigation" %>
+    <div id="page-wrapper">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-lg-12">
+                <%= yield %>    
+              </div>
+          </div>
+      </div>
+    </div>            
 
-<%= yield %>
+<% if notice %> 
+   <script>
+      $.notify("<%= notice %>", "success");
+   </script>
+ <% end %>
 
 </body>
 </html>
