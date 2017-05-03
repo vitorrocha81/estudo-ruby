@@ -1,14 +1,17 @@
 class Backoffice::AdminsController < BackofficeController
 	before_action :set_admin, only: [:edit, :update, :destroy]
 
+  after_action :verify_authorized, only: :new
+  after_action :verify_policy_scoped, only: :index
   # enum role: {:full_access, :restrisct_access}
 
   def index
-  	@admins = Admin.with_full_access
+  	@admins = policy_scope(Admin)
   end
 
-  def new
+  def new 
   	@admin = Admin.new
+    authorize @admin
   end
 
   def create
@@ -21,6 +24,7 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def edit
+    authorize @admin
   end
 
   def destroy
@@ -30,13 +34,7 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def update
-  	passwd = params[:admin][:password]
-  	passwd_confirmation = params[:admin][:password_confirmation]
-
-  	if passwd.blank? && passwd_confirmation.blank?
-  		params[:admin].delete(:password)
-  		params[:admin].delete(:password_confirmation)
-  	end	
+  	
 
   	if @admin.update(admin_params)
   		redirect_to  backoffice_admins_path, notice: "Usuário (#{@admin.email}) atualizada com sucesso"
@@ -53,7 +51,14 @@ class Backoffice::AdminsController < BackofficeController
    private
 
    def admin_params
-   		params.require(:admin).permit(:email, :password, :password_confirmation, :name, :role)
+    passwd = params[:admin][:password]
+    passwd_confirmation = params[:admin][:password_confirmation]
+
+    if passwd.blank? && passwd_confirmation.blank?
+      params[:admin].except!(:password, :password_confirmation)
+    end 
+
+    params.require(:admin).permit(:email, :password, :password_confirmation, :name, :role)
    end
 end
 

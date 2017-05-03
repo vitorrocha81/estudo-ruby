@@ -9,16 +9,4 @@ class Admin < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-
- def role_type
- 	 case self.role
-	 	 when "full_access"
-	 	 	'Acesso completo'
-	 	 when "restricted_acess"
-	 	 	'Restrito'
-	 	 when "bills"
-	 	 	'Financeiro'
- 	 end
- end        
-
 end

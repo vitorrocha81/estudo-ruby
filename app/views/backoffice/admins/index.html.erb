@@ -2,11 +2,13 @@
 <h1 class="page-header">USUÁRIOS - ADMINS</h1>
 <div class="panel panel-default">
     <div class="panel-heading">
-        Lista de ADMINS CADASTRADOS ativas
-        <%= link_to  new_backoffice_admin_path  do %>
-	        <button type="button" class="btn btn-success btn-circle pull-right", style="margin-top: -5px; "><i class="fa fa-plus"></i>
-	        </button>
-        <% end %>
+        Lista de ADMINS CADASTRADOS
+        <% if policy(@admins).new? %>
+            <%= link_to  new_backoffice_admin_path  do %>
+    	        <button type="button" class="btn btn-success btn-circle pull-right", style="margin-top: -5px; "><i class="fa fa-plus"></i>
+    	        </button>
+            <% end %>
+       <% end %> 
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
@@ -25,7 +27,7 @@
                     <tr>
                         <td><%= admin.name %></td>
                         <td><%= admin.email %></td>
-                         <td><%= admin.role_type %></td>
+                         <td><%= admin.role_i18n %></td>
                         <td class="col-md-2 text text-center">
                             <%= link_to   edit_backoffice_admin_path(admin) do %>
                                 <button type="button" class="btn btn-primary btn-circle">

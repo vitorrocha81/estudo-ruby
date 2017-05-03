@@ -7,6 +7,10 @@ class BackofficeController < ApplicationController
   layout "backoffice"
   # layout :layout_backoffice_admin
 
+
+ def pundit_user
+  current_admin # change user to admin, for pundit
+ end
   protected
 
   # def layout_backoffice_admin
