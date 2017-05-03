@@ -10,8 +10,9 @@ class Backoffice::CategoriesController <  BackofficeController
   end
 
   def create
-  	@category = Category.find_or_create_by(category_params)
-  	if @category.save
+  	@category = CategoryService.create(category_params)
+
+  	unless @category.errors.any?
   		redirect_to  backoffice_categories_path, notice: "Categoria (#{@category.description}) criado com sucesso"
   	else
   		render :new
