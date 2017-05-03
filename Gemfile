@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 
+#Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
+gem 'enum_help'
+
 
 	source 'https://rails-assets.org' do 
 		gem 'rails-assets-notifyjs'

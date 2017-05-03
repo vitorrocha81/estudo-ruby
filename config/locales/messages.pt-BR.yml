@@ -1,0 +1,4 @@
+pt-BR:
+  messages:
+    confirm: Tem certeza?
+    confirm_msg: Você deseja realmente excuir (<b> %{item} </b>)?

@@ -4,7 +4,7 @@ class Backoffice::AdminsController < BackofficeController
   # enum role: {:full_access, :restrisct_access}
 
   def index
-  	@admins = Admin.all
+  	@admins = Admin.with_full_access
   end
 
   def new
