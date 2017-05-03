@@ -30,11 +30,12 @@
                                     <i class="fa fa-edit"></i>
                                 </button>
                             <% end %>
-                            
-                            <%= link_to   backoffice_admin_path(admin), method: :delete do %>
-                                <button type="button" class="btn btn-danger btn-circle">
+                            <% if current_admin.email != admin.email  %>
+                            <%= link_to   backoffice_admin_path(admin), method: :delete ,  class: "btn btn-danger btn-circle" , data: {confirm: "DELETAR USUÁRIO <b> #{admin.email} </b> ?"}  do  %>
                                     <i class="fa fa-minus"></i>
-                                </button>
+                            <% end %>
+                            <% else %> 
+                                
                             <% end %>
                         </td>
                     </tr>

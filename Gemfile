@@ -23,9 +23,6 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
-
-gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -35,6 +32,13 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+
+
+	source 'https://rails-assets.org' do 
+		gem 'rails-assets-notifyjs'
+		gem 'rails-assets-bootstrap', '3.3.7'
+		gem 'rails-assets-bootbox'
+	end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -48,6 +52,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'better_errors'
+  gem 'faker'
 end
 
 group :development do
