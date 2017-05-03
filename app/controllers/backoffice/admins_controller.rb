@@ -1,6 +1,8 @@
 class Backoffice::AdminsController < BackofficeController
 	before_action :set_admin, only: [:edit, :update, :destroy]
 
+  # enum role: {:full_access, :restrisct_access}
+
   def index
   	@admins = Admin.all
   end
@@ -51,7 +53,7 @@ class Backoffice::AdminsController < BackofficeController
    private
 
    def admin_params
-   		params.require(:admin).permit(:email, :password, :password_confirmation)
+   		params.require(:admin).permit(:email, :password, :password_confirmation, :name, :role)
    end
 end
 

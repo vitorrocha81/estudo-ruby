@@ -24,7 +24,9 @@ puts "Categorias cadastradas com sucesso"
  puts "CADASTRANDO ADMIN PADRÃO"
 
   Admin.create!(email: "vitor@vitor.com.br",
-  							password: "123456", password_confirmation: "123456")
+  							name: "Vitor adm geral",
+  							password: "123456", password_confirmation: "123456",
+  							role: 0)
 
 puts "------>>> DADOS PADRÃO DO ADMIN! PEÇA AO VITOR!"
 puts "___________________________________"
