@@ -30,9 +30,11 @@
                                     <i class="fa fa-edit"></i>
                                 </button>
                             <% end %>
-                            <button type="button" class="btn btn-danger btn-circle">
-                                <i class="fa fa-minus"></i>
-                            </button>
+                            <%= link_to  backoffice_category_path(category), method: :delete do %>
+                                <button type="button" class="btn btn-danger btn-circle">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            <% end %>
                         </td>
                     </tr>
                     <% end %>

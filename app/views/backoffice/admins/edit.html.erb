@@ -1,0 +1,17 @@
+
+
+    <h1 class="page-header">
+    <%=t "#{controller_name}_#{action_name}" %>
+    </h1>
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Editar admin <strong><%= @admin.email %></strong>
+    </div>
+<!-- /.panel-heading -->
+    <div class="panel-body">
+        <%= render 'form' %> 
+    </div>
+<!-- /.panel-body -->
+</div>

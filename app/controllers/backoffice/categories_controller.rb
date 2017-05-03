@@ -10,7 +10,7 @@ class Backoffice::CategoriesController <  BackofficeController
   end
 
   def create
-  	@category = Category.new(category_params)
+  	@category = Category.find_or_create_by(category_params)
   	if @category.save
   		redirect_to  backoffice_categories_path, notice: "Categoria (#{@category.description}) criado com sucesso"
   	else
@@ -19,6 +19,11 @@ class Backoffice::CategoriesController <  BackofficeController
   end
 
   def edit
+  end
+
+  def destroy
+    @category.destroy
+    redirect_to backoffice_categories_path,  notice: "Categoria deletada com sucesso"
   end
 
   def update

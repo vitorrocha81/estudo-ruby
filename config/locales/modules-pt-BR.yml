@@ -1,0 +1,4 @@
+pt-BR:
+  activerecord:
+    categories_new: Nova categoria
+    categories_edit: Editar categoria "#{:description}""
