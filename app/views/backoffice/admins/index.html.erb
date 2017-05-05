@@ -34,12 +34,14 @@
                                     <i class="fa fa-edit"></i>
                                 </button>
                             <% end %>
-                            <% if current_admin.email != admin.email  %>
+                            <% if current_admin.email != admin.email && policy(@admins).destroy?  %>
                             <%= link_to   backoffice_admin_path(admin), method: :delete ,  class: "btn btn-danger btn-circle" , data: {confirm: t('messages.confirm_msg', item: admin.name)} do  %>
                                     <i class="fa fa-minus"></i>
-                            <% end %>
+                                <% end %>    
                             <% else %> 
-                                
+                                 <%= link_to '#', class: "btn btn-danger btn-circle", disabled: 'disabled', data: {confirm: t('messages.confirm_msg', item: admin.name)} do  %>
+                                    <i class="fa fa-minus"></i>
+                                 <% end %>   
                             <% end %>
                         </td>
                     </tr>

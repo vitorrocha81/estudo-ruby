@@ -1,7 +1,7 @@
 class Backoffice::AdminsController < BackofficeController
 	before_action :set_admin, only: [:edit, :update, :destroy]
 
-  after_action :verify_authorized, only: :new
+  after_action :verify_authorized, only: [:new, :edit, :destroy]
   after_action :verify_policy_scoped, only: :index
   # enum role: {:full_access, :restrisct_access}
 
@@ -31,6 +31,7 @@ class Backoffice::AdminsController < BackofficeController
     @adm = @admin.email
     @admin.destroy
     redirect_to backoffice_admins_path, notice: " #{@adm} deletado com sucesso"
+    authorize @admin
   end
 
   def update
@@ -58,7 +59,7 @@ class Backoffice::AdminsController < BackofficeController
       params[:admin].except!(:password, :password_confirmation)
     end 
 
-    params.require(:admin).permit(:email, :password, :password_confirmation, :name, :role)
+    params.require(:admin).permit(policy(@admin).permited_attributes)
    end
 end
 
