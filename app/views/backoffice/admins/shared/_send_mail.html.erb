@@ -1,0 +1,31 @@
+<div class="modal fade" id="sendMailModal" tabindex="-1" role="dialog" aria-labelledby="sendMailModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="adminNome"></h4>
+      </div>
+      <div class="modal-body">
+        <%= form_tag(backoffice_send_mail_index_path, remote: true) do %>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Destinatário:</label>
+            <%= text_field_tag(:adminEmail, nil, class: 'form-control', readonly: true) %>
+          </div>
+          <div class="form-group">
+            <label for="subject" class="control-label">Assunto:</label>
+            <input type="text" class="form-control" id="subject">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Mensagem:</label>
+            <textarea class="form-control" id="adminMsg"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+            <%= submit_tag "ENVIAR", class: "btn btn-warning" %>
+          </div>
+         <% end %>  
+      </div>
+     
+    </div>
+  </div>
+</div>
