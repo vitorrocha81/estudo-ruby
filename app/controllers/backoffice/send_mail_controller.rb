@@ -13,8 +13,7 @@ class Backoffice::SendMailController < ApplicationController
 			AdminMailer.admin_message(current_admin, params[:recipient], params[:subject], params[:adminMsg]).deliver_now
 			@notify_message = "E-MAIL ENVIADO COM SUCESSO"
 			@nofity_flag = 'danger'
-		rescue  Exception => e
-			e.message
+		rescue  
 
 			@notify_message = "erro eo enviar"
 			@nofity_flag = 'danger'
