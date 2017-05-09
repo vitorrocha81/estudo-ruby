@@ -1,7 +1,7 @@
 $(function(){
 let	$sendMailModal = $('#sendMailModal');
 
-	$('#adminEmail').val('<%= @admin.email %>');
+	$('#recipient').val('<%= @admin.email %>');
 	$('#adminNome').text('Enviar mensagem para: <%= @admin.name %>');
 	
 	$sendMailModal.modal();

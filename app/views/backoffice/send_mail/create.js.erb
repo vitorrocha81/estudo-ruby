@@ -1,0 +1,7 @@
+$(function(){
+
+	$('#sendMailModal').modal('hide');
+	$('#subject').val('');
+	$('#adminMsg').val('');
+	$.notify('<%= @notify_message %>', "<%= @notify_flag %>");
+});
