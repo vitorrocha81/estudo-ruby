@@ -32,3 +32,14 @@ puts "------>>> DADOS PADRÃO DO ADMIN! PEÇA AO VITOR!"
 puts "___________________________________"
 puts "ADMIN CRIADO COM SUCESSO PARÇA! :)" 
 puts "___________________________________"
+
+
+############### DEFAULT MEMBER ##################
+ puts "CADASTRANDO MEU MEMBRO"
+
+  Member.create!(email: "membro@vitor.com.br",
+  							password: "123456",
+  							password_confirmation: "123456")
+
+puts "____________________________"
+puts "MEMBRO CRIADO COM SUCESSO :)" 

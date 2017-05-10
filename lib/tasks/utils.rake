@@ -1,5 +1,21 @@
 namespace :utils do
 
+  # executar comandos 
+    desc "SETUP DO APP EM DEV"
+    task setup_app: :environment do
+      puts "inicio do setup_app"
+
+      puts "Apabando db ... #{%x(rake db:drop)}"
+      puts "Criando db ... #{%x(rake db:create)}"
+      puts "Migrations ... #{%x(rake db:migrate)}"
+      puts "seeds... #{%x(rake db:seed)}"
+      puts "cria admins ... #{%x(rake utils:generate_admins)}"
+      puts "cria ads #{%x(rake utils:generate_ads)}"
+      puts "cria membros #{%x(rake utils:generate_members)}"
+
+      puts " ------------- setup executado com sucesso"
+    end
+
   # CRIA ADMINS PARA O SISTEMA, COM NÍVELS E REGRAS 
   
   desc "CRIAR FAKE ADMINS"
