@@ -1,4 +1,6 @@
 namespace :utils do
+
+  # CRIA ADMINS PARA O SISTEMA, COM NÍVELS E REGRAS 
   
   desc "CRIAR FAKE ADMINS"
   task generate_admins: :environment do
@@ -11,7 +13,23 @@ namespace :utils do
   	puts "ADMINS CRIADOS COM SUCESSO"	
   end
 
-  desc "CRIAR FAKE ADMINS"
+  # CRIA FAKE MEMBERS
+
+  desc "CRIANDO MEMBROS PARA O SITE"
+  task generate_members: :environment do
+    50.times do
+      Member.create!(email: Faker::Internet.email,
+                    # name: Faker::Name.name,
+                    password: "123456",
+                    password_confirmation: "123456"
+                    )
+    end
+    puts "membros criados com sucesso "
+  end
+
+  # Criar anuncios falsos de modelo 
+
+  desc "CRIAR FAKE ADS"
   task generate_ads: :environment do
   	100.times do
   		Ad.create!(title: Faker::Lorem.sentence(1),
