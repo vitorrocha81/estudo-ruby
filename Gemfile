@@ -40,6 +40,9 @@ gem 'pundit'
 #formatar moedas
 gem 'money-rails'
 
+# gem paperclip para imagems - (DEPOIS FAZER COMO NESTED, PARA ADD MAIS DE UMA FOTO)
+gem 'paperclip'
+
 	source 'https://rails-assets.org' do 
 		gem 'rails-assets-notifyjs'
 		gem 'rails-assets-bootstrap', '3.3.7'

@@ -4,4 +4,8 @@ class Ad < ActiveRecord::Base
 
   #money
   monetize :price_cents
+
+  #PAPERCLIP
+  has_attached_file :picture, styles: { medium: "350#x150#", thumb: "100x100>" }, default_url: "/images/:ad_id/:style/missing.png"
+  validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 end
