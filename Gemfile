@@ -37,6 +37,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'enum_help'
 gem 'pundit'
 
+#formatar moedas
+gem 'money-rails'
 
 	source 'https://rails-assets.org' do 
 		gem 'rails-assets-notifyjs'

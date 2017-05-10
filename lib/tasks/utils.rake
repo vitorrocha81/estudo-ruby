@@ -17,7 +17,8 @@ namespace :utils do
   		Ad.create!(title: Faker::Lorem.sentence(1),
   							description: Faker::Lorem.sentence([2,3,4,5,6].sample),
   							member: Member.all.sample,
-  							category: Category.all.sample)
+  							category: Category.all.sample,
+                price: "#{Random.rand(500)},#{Random.rand(99)}")
   	end
   	puts "ADS CRIADOS COM SUCESSO"
   end
