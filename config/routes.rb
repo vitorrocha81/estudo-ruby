@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  namespace :site do
+  namespace :profile do
+    get 'ads/index'
+    end
+  end
+
   get 'backoffice', to: 'backoffice/dashboard#index'
 
   namespace :backoffice do
@@ -15,6 +21,7 @@ Rails.application.routes.draw do
     # perfil do membro
     namespace :profile do
       resources :dashboard, only: [:index]
+      resources :ads
     end
     # fim do perfil do membro
 
