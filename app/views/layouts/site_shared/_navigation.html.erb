@@ -15,7 +15,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <%= 
+                        123
                     </li>
                     <li>
                         <a href="#">123</a>
@@ -23,6 +23,25 @@
                     <li>
                         <a href="#">456</a>
                     </li>
+                </ul>
+
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                    <% if member_signed_in? %>
+                       <%= link_to "Olá #{current_member.email} - SAIR", destroy_member_session_path, method: :delete %>
+                      <% else %>   
+                        <%= link_to 'LOGIN', new_member_session_path %>
+                      <% end %>  
+                    </li>
+                    <li>
+                        <%= link_to 'PERFIL', new_member_registration_path %>
+                    </li>
+                    
+
+                    <li>
+                        <%= link_to 'CADASTRE-SE',  new_member_registration_path  %>
+                    </li>
+                   
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
