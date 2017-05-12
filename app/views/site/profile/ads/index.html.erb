@@ -1,0 +1,36 @@
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        total: <%= @ads.count %>
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Imagem</th>
+                        <th>Título</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <% @ads.each do |ad| %>
+                    <tr>
+                        <td><%= ad.id %></td>
+                        <td> <%= ad.title.truncate(50) %></td>
+                        <td><%= image_tag ad.picture.url(:thumb) %></td>
+                        <td><%= humanized_money_with_symbol ad.price %></td>
+                    </tr>
+                <% end %>    
+                </tbody>
+            </table>
+        </div>
+        <!-- /.table-responsive -->
+    </div>
+    <!-- /.panel-body -->
+</div>
+<!-- /.panel -->
+                
+
