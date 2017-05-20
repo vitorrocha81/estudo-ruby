@@ -1,0 +1,48 @@
+<h1>EDITANDO ANÚNCIO</h1>
+
+<%= form_for([:site, :profile, @ad], html: {multipart: true}) do |f| %>
+
+<div class="row">
+  <div class="col-xs-6">
+    <div class="form-group">
+    <%= f.text_field :title, class: "form-control", placeholder: "Título do anúncio" %>
+    </div>
+  </div>    
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <div class="form-group">
+    <%= f.collection_select :category_id, Category.all, :id, :description, {}, {class: "form-control"} %>
+    </div>
+  </div>    
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <div class="form-group">
+    <%= f.text_field :price, class: "form-control", placeholder: "PREÇO" %>
+    </div>
+  </div>    
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <div class="form-group">
+      <%= image_tag @ad.picture(:medium), class: "img-thumbnail" %>
+      <%= f.file_field :picture, class: "btn" %>
+    </div>
+  </div>    
+</div>
+
+<div class="row">
+  <div class="col-xs-6">
+    <div class="form-group">
+    <%= f.text_area :description, class: "form-control", placeholder: "PREÇO" %>
+    </div>
+  </div>    
+</div>
+
+<%= submit_tag "CADASTRAR", class: "btn btn-default" %>
+
+<% end %>

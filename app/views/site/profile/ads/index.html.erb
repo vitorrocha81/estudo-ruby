@@ -12,6 +12,7 @@
                         <th>#</th>
                         <th>Imagem</th>
                         <th>Título</th>
+                        <th>Categoria</th>
                         <th>Preço</th>
                     </tr>
                 </thead>
@@ -21,6 +22,7 @@
                         <td><%= ad.id %></td>
                         <td> <%= ad.title.truncate(50) %></td>
                         <td><%= image_tag ad.picture.url(:thumb) %></td>
+                        <td><%= ad.category.description %></td>
                         <td><%= humanized_money_with_symbol ad.price %></td>
                     </tr>
                 <% end %>    
