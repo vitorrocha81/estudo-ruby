@@ -2,6 +2,9 @@ class Ad < ActiveRecord::Base
   belongs_to :member
   belongs_to :category
 
+  #validação dos campos, preenchimento obrigatório
+  validates_presence_of :title, :description, :price, :category, :picture
+
   #money
   monetize :price_cents
 

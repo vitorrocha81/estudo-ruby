@@ -14,16 +14,18 @@
                         <th>Título</th>
                         <th>Categoria</th>
                         <th>Preço</th>
+                        <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
                 <% @ads.each do |ad| %>
                     <tr>
                         <td><%= ad.id %></td>
-                        <td> <%= ad.title.truncate(50) %></td>
+                        <td> <%= link_to ad.title.truncate(50),  site_profile_ad_path(ad) %></td>
                         <td><%= image_tag ad.picture.url(:thumb) %></td>
                         <td><%= ad.category.description %></td>
                         <td><%= humanized_money_with_symbol ad.price %></td>
+                        <td> <%= link_to "EDITAR", edit_site_profile_ad_path(ad.id), class: 'btn btn success' %></td>
                     </tr>
                 <% end %>    
                 </tbody>
