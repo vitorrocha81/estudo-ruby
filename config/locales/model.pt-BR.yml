@@ -1,0 +1,16 @@
+pt-BR:
+  active_record:
+    models:
+      ad:
+        one: Um Anúncio
+        other: Anúncios
+    attributes:
+      member:
+        id: Código
+      admin:
+        email: E-mail
+        password: Senha
+      ad:
+      finish_date: Data de finalização
+      picture: Imagem
+      price: Preço

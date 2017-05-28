@@ -3,7 +3,8 @@ class Ad < ActiveRecord::Base
   belongs_to :category
 
   #validação dos campos, preenchimento obrigatório
-  validates_presence_of :title, :description, :price, :category, :picture
+  validates :title, :description, :category, :picture, :finish_date, presence: true
+  validates :price, numericality: { greater_than: 0},  presence: true
 
   #money
   monetize :price_cents
