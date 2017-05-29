@@ -13,7 +13,7 @@
 
 
 //= require bootstrap_sb_admin_base_v2
-//= require notifyjs
+//= require bootstrap.growl
 //= require bootbox
 
 $.rails.allowAction = function(element) {

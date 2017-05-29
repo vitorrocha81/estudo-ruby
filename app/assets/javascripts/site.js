@@ -1,3 +1,3 @@
 //= require bootstrap
-//= require notifyjs
+//= require bootstrap.growl
 //= require bootbox

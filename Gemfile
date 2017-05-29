@@ -46,9 +46,10 @@ gem 'paperclip'
 gem 'jquery-ui-rails'
 
 	source 'https://rails-assets.org' do 
-		gem 'rails-assets-notifyjs'
 		gem 'rails-assets-bootstrap', '3.3.7'
 		gem 'rails-assets-bootbox'
+    gem 'rails-assets-bootstrap.growl'
+    gem 'rails-assets-animate-css'
 	end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
