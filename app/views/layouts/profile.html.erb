@@ -13,11 +13,6 @@
     <%= stylesheet_link_tag    'site', media: 'all' %>
     <%= stylesheet_link_tag    'site/profile', media: 'all' %>
 
-
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag 'site' %>
-    <%= javascript_include_tag 'site/profile' %>
-
     <%= csrf_meta_tags %>
 
 
@@ -51,18 +46,6 @@
                 <li>
                     <%= link_to 'NOVO ANÚNCIO',  new_site_profile_ad_path  %>
                 </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -80,6 +63,13 @@
         <!-- /#page-content-wrapper -->
 
     </div>
+
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'site' %>
+    <%= javascript_include_tag 'site/profile' %>
+    
+    <%= yield :javascripts %>
+
     <% if notice %> 
       <%= javascript_tag "$.notify('#{notice}', 'success');" %>
      <% end %>
