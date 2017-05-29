@@ -25,6 +25,10 @@ Rails.application.routes.draw do
     end
     # fim do perfil do membro
 
+    # detalhes dos anúncios
+    resources :ad_details, only: [:show]
+    # fim do detalhe dos anúncios
+
   end
 
   devise_for :admins, skip: [:registrations]

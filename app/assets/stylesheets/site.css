@@ -18,6 +18,11 @@ body {
     width: 100%;
 }
 
+.slide-image-product {
+    width: 100%;
+    height: 150px;
+}
+
 .carousel-holder {
     margin-bottom: 30px;
 }

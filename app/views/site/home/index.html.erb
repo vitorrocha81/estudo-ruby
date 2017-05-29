@@ -54,7 +54,8 @@
                                 <%= image_tag ad.picture.url(:medium) %>
                                 <div class="caption">
                                     <h4 class="pull-right text text-small"><%= humanized_money_with_symbol(ad.price) %></h4>
-                                    <h4 class="text text-uppercase"><a href="#"><%= ad.title.truncate(18) %></a>
+                                    <h4 class="text text-uppercase">
+                                    <%= link_to ad.title.truncate(18),  site_ad_detail_path(ad)  %>
                                     </h4>
                                     <p> <%= ad.description.truncate(150) %></p>
                                 </div>
