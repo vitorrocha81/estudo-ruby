@@ -25,14 +25,12 @@
                                     
 
                                 
-                            <div class="input-group">
-                                        <% if devise_mapping.rememberable? -%>
-                                          <div class="checkbox">
-                                            <%= f.check_box :remember_me %>
-                                            Lembrar-me
-                                          </div>
-                                        <% end -%>
-                                      </div>
+                                  <div class="input-group">
+                                    <% if devise_mapping.rememberable? -%>
+                                        <%= f.check_box :remember_me, class: "input-group checkbox" %>
+                                        Lembrar-me
+                                    <% end -%>
+                                  </div>
 
 
                                 <div style="margin-top:50px" class="form-group">
