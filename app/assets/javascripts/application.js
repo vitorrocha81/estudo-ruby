@@ -12,3 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+
+
+$(document).ready(function {
+	// loading sk-fading-circle
+	$(document).ajaxStart(function() {
+		$('#sk-fading-circle').fadeIn('slow');
+	})
+	$(document).ajaxStop(function() {
+		$('#sk-fading-circle').fadeOut('slow');
+	});
+});

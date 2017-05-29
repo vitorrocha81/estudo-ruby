@@ -1,11 +1,9 @@
-    
-
-    <!-- Page Content -->
+<!-- Page Content -->
     <div class="container">
 
         <div class="row">
 
-            <div class="col-md-3">
+            <div id="home_sidebar" class="col-md-3">
                 <p class="lead">Categorias de anúncios</p>
                 <div class="list-group">
                     <% @categories.each do |category| %>
@@ -14,7 +12,7 @@
                 </div>
             </div>
 
-            <div class="col-md-9">
+            <div id="home_detail" class="col-md-9">
 
                 <div class="row carousel-holder">
 
@@ -55,7 +53,7 @@
                                 <div class="caption">
                                     <h4 class="pull-right text text-small"><%= humanized_money_with_symbol(ad.price) %></h4>
                                     <h4 class="text text-uppercase">
-                                    <%= link_to ad.title.truncate(18),  site_ad_detail_path(ad)  %>
+                                    <%= link_to ad.title.truncate(18),  site_ad_detail_path(ad), remote: true  %>
                                     </h4>
                                     <p> <%= ad.description.truncate(150) %></p>
                                 </div>
