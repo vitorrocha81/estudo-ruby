@@ -67,6 +67,27 @@
   </div>    
 </div>
 
+<div class="row"> 
+  <div class="col-xs-12">
+    <div class="form-group">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Pré-Visutalização da descrição
+        </div>
+        <div class="panel-body">
+            <p> <%= md_to_html(@ad.description) %></p>
+        </div>
+        <div class="panel-footer">
+            <%= link_to "VER TODOS OS ANÚNCIOS",  site_profile_ads_index_path, class: "btn btn-success" %>
+            <%= link_to "VER PÁGINA INICIAL",   site_home_path, class: "btn btn-success"   %>
+        </div>
+    </div>
+    </div>    
+  </div>
+</div>
+
+
 <%= submit_tag "ENVIAR", class: "btn btn-default" %>
 
 <% end %>

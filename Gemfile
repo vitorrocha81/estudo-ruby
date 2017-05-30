@@ -43,6 +43,9 @@ gem 'money-rails'
 # gem paperclip para imagems - (DEPOIS FAZER COMO NESTED, PARA ADD MAIS DE UMA FOTO)
 gem 'paperclip'
 
+#Markdow - redcarpet
+gem 'redcarpet'
+
 gem 'jquery-ui-rails'
 
 	source 'https://rails-assets.org' do 
@@ -65,6 +68,7 @@ group :development, :test do
   gem 'byebug'
   gem 'better_errors'
   gem 'faker'
+  gem 'doctor_ipsum'
 end
 
 group :development do

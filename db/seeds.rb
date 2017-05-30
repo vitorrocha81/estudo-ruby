@@ -46,7 +46,7 @@ puts "MEMBRO CRIADO COM SUCESSO :)"
 
 5.times do
 	Ad.create!(title: Faker::Lorem.sentence(1),
-	          description: Faker::Lorem.sentence([2,3,4,5,6].sample),
+	          description: Faker::Lorem.sentence([2,3,4,5,].sample),
 	          member: Member.first,
 	          category: Category.all.sample,
 	          price: "#{Random.rand(500)},#{Random.rand(99)}",

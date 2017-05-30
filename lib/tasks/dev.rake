@@ -53,7 +53,7 @@ namespace :dev do
   task generate_ads: :environment do
   	100.times do
   		Ad.create!(title: Faker::Lorem.sentence(1),
-  							description: Faker::Lorem.sentence([2,3,4,5,6].sample),
+  							description: Faker::Lorem.sentence([2,3,4,5,].sample),
   							member_id: Member.all.sample,
   							category: Category.all.sample,
                 price: "#{Random.rand(500)},#{Random.rand(99)}",
@@ -62,6 +62,11 @@ namespace :dev do
                 )
   	end
   	puts "ADS CRIADOS COM SUCESSO"
+  end
+
+  # nao funcionou! :(
+  def markdown_fake
+      %x(ruby -e "require 'doctor_ipsum'; puts DoctorIpsum::Markdown.entry")
   end
 
 end

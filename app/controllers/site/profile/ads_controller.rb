@@ -23,13 +23,14 @@ class Site::Profile::AdsController < Site::ProfileController
   	if @ad.save
   		redirect_to  site_profile_ads_path  , notice: "Criado com sucesso"
   	else
-  		render :new
+  		render :edit
   	end
   end
 
   def update
     if @ad.update(ad_params)
-      redirect_to  site_profile_ads_path  , notice: "Atualizado com sucesso"
+      # redirect_to  site_profile_ads_path  
+      render :edit , notice: "Atualizado com sucesso"
     else
       render :edit
     end
