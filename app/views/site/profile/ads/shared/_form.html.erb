@@ -60,9 +60,19 @@
 </div>
 
 <div class="row">
-  <div class="col-xs-6">
+  <div class="col-xs-12">
     <div class="form-group">
-    <%= f.text_area :description, class: "form-control", placeholder: "DESCRIÇÃO" %>
+    <%= f.label :description_short %>
+    <%= f.text_area :description_short, class: "form-control", placeholder: "DESCRIÇÃO", rows: 3 %>
+    </div>
+  </div>    
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="form-group">
+    <%= f.label :description_md %>
+    <%= f.text_area :description_md, class: "form-control", placeholder: "DESCRIÇÃO", rows: 6 %>
     </div>
   </div>    
 </div>
@@ -76,7 +86,7 @@
             Pré-Visutalização da descrição
         </div>
         <div class="panel-body">
-            <p> <%= md_to_html(@ad.description) %></p>
+            <p> <%= @ad.description.html_safe %></p>
         </div>
         <div class="panel-footer">
             <%= link_to "VER TODOS OS ANÚNCIOS",  site_profile_ads_index_path, class: "btn btn-success" %>

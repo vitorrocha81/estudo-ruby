@@ -21,7 +21,7 @@ class Site::Profile::AdsController < Site::ProfileController
   	@ad = Ad.create(ad_params)
     @ad.member = current_member
   	if @ad.save
-  		redirect_to  site_profile_ads_path  , notice: "Criado com sucesso"
+  		redirect_to  site_profile_ads_path, notice: "Criado com sucesso"
   	else
   		render :edit
   	end
@@ -30,7 +30,7 @@ class Site::Profile::AdsController < Site::ProfileController
   def update
     if @ad.update(ad_params)
       # redirect_to  site_profile_ads_path  
-      render :edit , notice: "Atualizado com sucesso"
+      render :edit, notice: "Atualizado com sucesso"
     else
       render :edit
     end
@@ -44,7 +44,7 @@ class Site::Profile::AdsController < Site::ProfileController
   end
 
   def ad_params
-  	 params.require(:ad).permit(:price, :category_id, :description, :title, :picture, :finish_date)
+  	 params.require(:ad).permit(:price, :category_id, :description, :title, :picture, :finish_date, :description_short, :description_md)
   end
 
 end

@@ -55,7 +55,7 @@
                                     <h4 class="text text-uppercase">
                                     <%= link_to ad.title.truncate(18),  site_ad_detail_path(ad), remote: true  %>
                                     </h4>
-                                    <p> <%= ad.description.truncate(150) %></p>
+                                    <p> <%= ad.description_short %></p>
                                 </div>
                                 <div class="ratings">
                                     <p class="pull-right">18 reviews</p>

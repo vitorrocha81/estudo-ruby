@@ -14,3 +14,6 @@ pt-BR:
       finish_date: Data de finalização
       picture: Imagem
       price: Preço
+      description_md: Markdown
+      description: Descrição
+      description_short: Breve Descrição

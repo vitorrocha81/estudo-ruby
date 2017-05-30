@@ -15,7 +15,7 @@
         <div class="col-xs-5" style="border:0px solid gray">
         <!-- Datos del vendedor y titulo del producto -->
         <h3><% @ad.title %></h3>    
-        <h5 style="color:#337ab7">vendido por <a href="#"> <%= @ad.member.email %></a> · <small style="color:#337ab7">(5054 ventas)</small></h5>
+        <h5 style="color:#337ab7">vendido por <a href="#"> <%= @ad.member.email unless @ad.member.nil? %></a> · <small style="color:#337ab7">(5054 ventas)</small></h5>
 
         <!-- Precios -->
         <h6 class="title-price"><small>PREÇO</small></h6>
@@ -62,7 +62,7 @@
         <div style="width:100%;border-top:1px solid silver">
         <p style="padding:15px;">
             <small>
-            	 <%= md_to_html(@ad.description) %>
+            	 <%= @ad.description.html_safe %>
             </small>
         </p>
         <small>

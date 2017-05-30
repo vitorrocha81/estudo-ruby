@@ -53,8 +53,10 @@ namespace :dev do
   task generate_ads: :environment do
   	100.times do
   		Ad.create!(title: Faker::Lorem.sentence(1),
+                description_short: Faker::Lorem.sentence(1),
+                description_md: Faker::Lorem.sentence([2,3,4,5,].sample),
   							description: Faker::Lorem.sentence([2,3,4,5,].sample),
-  							member_id: Member.all.sample,
+  							member: Member.all.sample,
   							category: Category.all.sample,
                 price: "#{Random.rand(500)},#{Random.rand(99)}",
                 finish_date: Date.today + Random.rand(90),
